@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+html, body {
+    width: 100%;
+    height: 100%
+}
+
+body {
+    background: #0b0b0e url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/overlay.png") no-repeat;
+    overflow: hidden;
+    opacity: 0;
+    -webkit-animation: scale 1s 1s forwards;
+    animation: scale 1s 1s forwards;
+    -webkit-perspective-origin: center top;
+    perspective-origin: center top;
+    -webkit-perspective: 1500;
+    perspective: 1500
+}
+
+/* 居中 */
+.center {
+    height: 50px;
+    width: 50px;
+    left: 0;
+    right: 0;
+    top: 30%;
+    position: absolute;
+    margin: auto;
+    -webkit-transform: rotateX(35deg) rotateY(-25deg) rotatez(80deg) scale(0.5);
+    transform: rotateX(35deg) rotateY(-25deg) rotatez(80deg) scale(0.5);
+    -webkit-animation: wiggle 20s infinite linear;
+    animation: wiggle 20s infinite linear
+}
+
+/* common 定位公用样式 */
+.outer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%
+}
+
+/* 正圆 */
+.circle {
+    border-radius: 50%;
+    background: #de0b46;
+    box-shadow: 0 0 70px 20px hsl(343, 91%, 46%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
+}
+
+.outer_one {
+    -webkit-transform: translate(-100px, -50%);
+    transform: translate(-100px, -50%)
+}
+
+.outer_one_piece {
+    position: absolute;
+    border-radius: 2px;
+    width: 10px;
+    height: 30px;
+    background: #de0b46;
+    box-shadow: 0 0 20px 0 #de0b46;
+    -webkit-transform-origin: 100px 0;
+    transform-origin: 100px 0
+}
+
+/* 第二环 */
+.outer_two {
+    -webkit-transform: translate(-30px, -50%);
+    transform: translate(-300px, -50%)
+}
+
+.outer_two_piece {
+    position: absolute;
+    border-radius: 2px;
+    width: 30px;
+    height: 5px;
+    background: #de0b46;
+    box-shadow: 0 0 20px 0 #de0b46;
+    -webkit-transform-origin: 300px 0;
+    transform-origin: 300px 0
+}
+
+/* 第三环 */
+.outer_three {
+    -webkit-transform: translate(-400px, -50%);
+    transform: translate(-400px, -50%)
+}
+
+.outer_three_piece {
+    position: absolute;
+    border-radius: 2px;
+    width: 50px;
+    height: 5px;
+    background: #55e2f9;
+    box-shadow: 0 0 20px 0 #55e2f9;
+    -webkit-transform-origin: 400px 0;
+    transform-origin: 400px 0
+}
+
+/* 第四环 */
+.outer_four {
+    -webkit-transform: translate(-450px, -50%);
+    transform: translate(-450px, -50%)
+}
+
+.outer_four_piece {
+    position: absolute;
+    border-radius: 2px;
+    width: 6px;
+    height: 5px;
+    background: #de0b46;
+    box-shadow: 0 0 20px 0 #de0b46;
+    -webkit-transform-origin: 450px 0;
+    transform-origin: 450px 0
+}
+
+/* 第五环 */
+.outer_five {
+    -webkit-transform: translate(-400px, -50%);
+    transform: translate(-400px, -50%)
+}
+
+.outer_five_piece {
+    position: absolute;
+    border-radius: 2px;
+    width: 6px;
+    height: 5px;
+    background: #de0b46;
+    box-shadow: 0 0 20px 0 #de0b46;
+    -webkit-transform-origin: 400px 0;
+    transform-origin: 400px 0
+}
+
+/* 第六环 */
+.outer_six {
+    -webkit-transform: translate(500px, -50%);
+    transform: translate(500px, -50%)
+}
+
+.outer_six .outer_six_piece {
+    position: absolute;
+    height: 20px;
+    border: 3px solid #de0b46;
+    font-weight: 900;
+    padding: 30px;
+    font-size: 30px;
+    box-shadow: 0 0 25px rgba(222, 11, 70, 0.27);
+    transition: all 1s .1s;
+    text-align: left;
+    background: transparent;
+    color: white;
+    border-radius: 100px;
+    transform-origin: -500px 0
+}
+
+/* 文字 */
+.outer_six span {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    -webkit-transition: all .2s .1s;
+    transition: all .2s .1s
+}
+
+/* 直线 */
+.outer_six .line {
+    opacity: 0;
+    position: absolute;
+    width: 540px;
+    height: 5px;
+    left: -520px;
+    -webkit-transform: rotatez(4deg);
+    transform: rotatez(4deg);
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    top: 25px;
+    background: #de0b46;
+    -webkit-transition: all .4s .2s;
+    transition: all .4s .2s
+}
+
+/* 文字提示 */
+.outer_six .tip {
+    font-size: 17px;
+    position: absolute;
+    top: 70px;
+    left: 105%;
+    opacity: 0;
+    -webkit-transition: all .2s .3s;
+    transition: all .2s .3s;
+    font-weight: 400;
+    color: #85dfe4;
+    width: 100%
+}
+
+.outer_six .blank {
+    opacity: .1;
+    background: 0;
+    pointer-events: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.27);
+    border: 6px solid #3d4b6d
+}
+
+/* 鼠标移上效果 */
+.outer_six .outer_six_piece:hover {
+    cursor: pointer;
+    color: white;
+    background: #de0b46;
+    box-shadow: 0 0 55px rgba(222, 11, 70, 0.77);
+    -webkit-animation: blink .4s .4s;
+    animation: blink .4s .4s
+}
+
+.outer_six .outer_six_piece:hover span {
+    text-shadow: 0 13px 0 rgba(30, 30, 30, 0.4);
+    left: 240px
+}
+
+.outer_six .outer_six_piece:hover .tip {
+    opacity: 1;
+    left: 110%
+}
+
+.outer_six .outer_six_piece:hover .line {
+    opacity: 1
+}
+ 
+ 
